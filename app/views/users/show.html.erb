@@ -10,5 +10,15 @@
   <% end %>
 </div>
 
+<div>
+  <p>The events the user has attended:</p>
+  <% @attended_events.each do |event|%>
+  <div>
+    
+    <%= event.title %>
+  </div>
+  <% end %>
+</div>
+
 
 <%= link_to 'back', new_user_path %>
