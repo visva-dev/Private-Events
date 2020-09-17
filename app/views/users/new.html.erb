@@ -1,0 +1,15 @@
+<h1>Users#new</h1>
+<p id="notice"><%= flash[:notice] %></p>
+<div>
+  <%= form_with(model: @user, url: users_path, method: 'post') do |user| %>
+    <div>
+      <%= user.label :username %>
+      <div>
+        <%= user.text_field :username, placeholder: "Enter username" %>
+      </div>
+    </div>
+    <div>
+      <%= user.submit 'Add' %>
+    </div>
+  <% end %>
+</div>

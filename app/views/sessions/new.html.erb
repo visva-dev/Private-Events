@@ -1,0 +1,6 @@
+<h1>Sessions#new</h1>
+<h1>Login</h1>
+<%= form_tag '/sessions/create' do %>
+  username: <%= text_field_tag :username %>
+  <%= submit_tag "Submit" %>
+<% end %>
