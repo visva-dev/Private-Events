@@ -1,22 +1,14 @@
 <h1>Users#show</h1>
 <div>
-<p>The user is : <%= @user.username %></p>
-<p>The events the user has created:</p>
-<% @events.each do |event|%>
-<div>
+  <p>The user is : <%= @user.username %></p>
+  <p>The events the user has created:</p>
+  <% @events.each do |event|%>
+  <div>
+    
+    <%= event.title %>
+  </div>
+  <% end %>
+</div>
 
-<%= event.title %>
-</div>
-<% end %>
-</div>
 
-<div>
-<p>The events the user has attended:</p>
-<% @attended_events.each do |event|%>
-<div>
-
-<%= event %>
-</div>
-<% end %>
-</div>
-<%= link_to 'back', new_user_path %> 
+<%= link_to 'back', new_user_path %>

@@ -1,0 +1,21 @@
+<h1>Events#new</h1>
+<div>
+  <%= form_with(model: @event, url: events_path, method: 'post') do |event| %>
+    <div>
+      <%= event.label :title %>
+      <div>
+        <%= event.text_field :title, placeholder: "Enter the title" %>
+      </div>
+    </div>
+    <div>
+      <%= event.label :description %>
+      <div>
+        <%= event.text_field :description, placeholder: "Enter the description" %>
+      </div>
+    </div>
+    <div>
+      <%= event.submit 'Add' %>
+    </div>
+  <% end %>
+</div>
+<p id="notice"><%= flash[:notice] %></p>
