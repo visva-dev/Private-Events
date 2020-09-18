@@ -11,11 +11,14 @@
 </div>
 
 <div>
-  <p>The events the user has attended:</p>
+  <b><p>The events the user has or will be attended:</p></b>
   <% @attended_events.each do |event|%>
   <div>
-    
-    <%= event.title %>
+    <% if event.time > DateTime.now %>
+    <p>The future events: <%= event.title %></p>
+  <% else %>
+  <p>The past events: <%= event.title %></p>
+  <% end %>
   </div>
   <% end %>
 </div>
