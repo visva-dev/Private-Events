@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   include EventsHelper
   def new
@@ -18,7 +20,6 @@ class EventsController < ApplicationController
 
     @event.creator_id = session[:user_id]
 
-   
     if @event.save
       flash.notice = "Event '#{@event.title}' Created!"
       event_params.slice(:attendees).values.each do |x|
