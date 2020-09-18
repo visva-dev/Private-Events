@@ -1,11 +1,17 @@
 <h1>Events#index</h1>
 <h1>The all events that this specific user has created</h1>
 <p>The creator is: <b><%= @creator %></p></b>
-<% @events.each do |event| %>
-<div class="Events">
-  <p>The title is: <%= event.title %></p>
-  <p>The Description is: <%= event.description %></p>
+<div>
+  <% @future.each do |future| %>
+  <p>The upcoming events: <%= future.title %></p>
+  <p><%= future.time %></p>
+<% end %>
 </div>
 
+<div>
+  <% @past.each do |past| %>
+  <p>The past events:  <%= past.title %></p>
+  <p><%= past.time %></p>
 <% end %>
+</div>
 <%= link_to 'back', new_event_path %>
