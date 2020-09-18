@@ -1,6 +1,6 @@
 <h1>Events#new</h1>
 <div>
-  <%= form_with(model: @event, url: events_path, method: 'post') do |event| %>
+  <%= form_for @event do |event| %>
     <div>
       <%= event.label :title %>
       <div>
@@ -11,6 +11,21 @@
       <%= event.label :description %>
       <div>
         <%= event.text_field :description, placeholder: "Enter the description" %>
+      </div>
+    </div>
+    <div>
+      
+      <div>
+        <%= fields_for @attendee do |attendee| %>
+        <div>
+          <%= attendee.label :attendee_id %>
+        </div>
+        <%= attendee.text_field :attendee_id %>
+        <div>
+          <%= attendee.label :attended_event_id %>
+        </div>
+        <%= attendee.text_field :attended_event_id %>
+      <% end %>
       </div>
     </div>
     <div>
