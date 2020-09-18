@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .Links {
-   display: flex;
-   flex-direction: column;
- }
+  .Links {
+    display: flex;
+    flex-direction: column;
+  }
