@@ -1,0 +1,27 @@
+<h1>Users#show</h1>
+<div>
+  <p>The user is : <%= @user.username %></p>
+  <p>The events the user has created:</p>
+  <% @events.each do |event|%>
+  <div>
+    
+    <%= event.title %>
+  </div>
+  <% end %>
+</div>
+
+<div>
+  <b><p>The events the user has or will be attended:</p></b>
+  <% @attended_events.each do |event|%>
+  <div>
+    <% if event.time > DateTime.now %>
+    <p>The future events: <%= event.title %></p>
+  <% else %>
+  <p>The past events: <%= event.title %></p>
+  <% end %>
+  </div>
+  <% end %>
+</div>
+
+
+<%= link_to 'back', new_user_path %>

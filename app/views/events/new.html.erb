@@ -1,0 +1,36 @@
+<h1>Events#new</h1>
+<div>
+  <%= form_for @event do |event| %>
+    <div>
+      <%= event.label :title %>
+      <div>
+        <%= event.text_field :title, placeholder: "Enter the title" %>
+      </div>
+    </div>
+    <div>
+      <%= event.label :description %>
+      <div>
+        <%= event.text_field :description, placeholder: "Enter the description" %>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <%= event.label :time %>
+        <%= event.date_field :time %>
+      </div>
+      <div class="field">
+        <%= event.label "Guest List" %>
+        <%= event.collection_check_boxes :attendees, User.all, :id, :username do |user| %>
+          <div class="collection-check-box" style='display:flex'>
+            <%= user.check_box %>
+            <%= user.label %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+    <div>
+      <%= event.submit 'Add' %>
+    </div>
+  <% end %>
+</div>
+<p id="notice"><%= flash[:notice] %></p>

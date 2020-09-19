@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.Links {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,15 @@
+<h1>Events#show</h1>
+
+<div class="Events">
+  <p>The creator is: <b><%= @event.creator.username %></p></b>
+  <p>The title is: <b><%= @event.title %></p></b>
+  <p>The Description is: <b><%= @event.description %></p></b>
+   <p>The time is: <%= @event.time %></p>
+
+  <p>The attendees are: </p>
+  <% @attendee.each do |attendee| %>
+    <p><%= attendee.username %></p>
+<% end %>
+</div>
+
+<%= link_to 'back', new_event_path %>
