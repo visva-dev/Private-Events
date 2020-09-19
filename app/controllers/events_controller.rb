@@ -8,15 +8,27 @@ class EventsController < ApplicationController
   def index
     @events = current_user.events
     @creator = current_user.username
+    @future = Event.future
+    @past = Event.past
   end
 
   def create
-    @event = current_user.events.build(event_params)
-    @attendee = EventsRegistrator.new(event_users_params)
-    @attendee.save
+    @users = User.all
+    @event = current_user.events.build(event_params.except(:attendees))
+
     @event.creator_id = session[:user_id]
+
     if @event.save
       flash.notice = "Event '#{@event.title}' Created!"
+      event_params.slice(:attendees).values.each do |x|
+        x.each do |y|
+          if y.empty?
+          else
+            user = @users.find(y.to_i)
+            @event.attendees << user
+          end
+        end
+      end
       redirect_to event_path(@event)
 
     else

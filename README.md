@@ -2,6 +2,10 @@
 
 This is the project to learn about the Associations in rails.
 
+![screenshot](./app/assets/images/2020-09-18_12-30.png)<br>
+![screenshot](./app/assets/images/2020-09-18_12-32_1.png)<br>
+![screenshot](./app/assets/images/2020-09-18_12-32.png)<br>
+
 ## Built With
 
 -   Ruby
