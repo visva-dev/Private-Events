@@ -8,8 +8,8 @@ class EventsController < ApplicationController
   def index
     @events = current_user.events
     @creator = current_user.username
-    @future = Event.future
-    @past = Event.past
+    @future = @events.future
+    @past = @events.past
   end
 
   def create
